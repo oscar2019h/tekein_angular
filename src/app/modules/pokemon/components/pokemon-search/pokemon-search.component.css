@@ -1,0 +1,144 @@
+/* --- Estilos de la Caja de Búsqueda --- */
+
+.search-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.search-input-group {
+  display: flex;
+  gap: 10px; /* Espacio entre el input y el botón */
+}
+
+input[type="text"] {
+  flex-grow: 1; /* El campo de texto ocupa el espacio restante */
+  padding: 10px 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: #3e81f1; /* Color de foco azul */
+  outline: none;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #ee1515; /* Rojo clásico de Pokémon */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #a30e0e;
+}
+
+/* --- Estilos de Mensajes de Estado --- */
+
+.status-message {
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.loading {
+  background-color: #e0f7fa;
+  color: #00796b;
+}
+
+.error {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+
+/* --- Estilos de la Tarjeta de Pokémon --- */
+
+.pokemon-card-container {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: white;
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.pokemon-name {
+  color: #333;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.pokemon-details {
+  display: flex; /* Organiza las secciones en columnas */
+  gap: 30px;
+  flex-wrap: wrap; /* Permite que las secciones se envuelvan en pantallas pequeñas */
+}
+
+.image-and-meta {
+  /* Estilos para la sección de imagen/tipo */
+  flex: 0 0 200px; /* Ancho fijo para la imagen y meta info */
+  text-align: center;
+}
+
+.pokemon-image {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  border: 5px solid #ffcc00; /* Borde amarillo tipo pokébola */
+  border-radius: 50%;
+  background-color: #fefefe;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.pokemon-meta {
+  margin-top: 15px;
+  font-size: 1.1em;
+}
+
+.pokemon-data-section {
+  flex-grow: 1; /* Permite que las secciones de datos crezcan */
+  min-width: 250px;
+}
+
+/* Estilos de la lista de habilidades/ataques */
+.clean-list {
+  list-style: none; /* Quita los puntos de la lista */
+  padding-left: 0;
+}
+
+.clean-list li {
+  padding: 5px 0;
+  border-bottom: 1px dotted #eee;
+}
+
+/* Estilos de las etiquetas de tipo (Badges) */
+.type-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-weight: bold;
+  color: white;
+  text-transform: capitalize;
+  margin-left: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Ejemplo de color para un tipo específico (puedes añadir más) */
+.electrico { background-color: #f7d02c; color: #333; }
+.tierra { background-color: #e2bf65; }
+/* ... añade más clases para diferentes tipos (fuego, agua, etc.) */

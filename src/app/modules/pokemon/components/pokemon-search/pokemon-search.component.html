@@ -1,0 +1,56 @@
+<div class="search-container">
+  <h3>Buscar Pokémon por Nombre</h3>
+
+  <div class="search-input-group">
+    <input
+      type="text"
+      placeholder="Escribe el nombre del Pokémon (ej: pikachu)"
+      [(ngModel)]="pokemonName"
+      (keyup.enter)="searchPokemon()"
+    >
+    <button (click)="searchPokemon()">Buscar</button>
+  </div>
+
+  <div *ngIf="loading" class="status-message loading">Buscando...</div>
+  <div *ngIf="error" class="status-error">{{ error }}</div>
+
+  <hr>
+
+  <div *ngIf="foundPokemon" class="pokemon-card-container">
+    <div *ngIf="!loading && foundPokemon.length > 0">
+      <div *ngFor="let p of foundPokemon" class="pokemon-card">
+
+        <h2 class="pokemon-name">{{ p.name | uppercase }}</h2>
+
+        <div class="pokemon-details">
+          <div class="image-and-meta">
+            <img [src]="p.image || 'url-de-imagen-default.png'" [alt]="p.name" class="pokemon-image">
+
+            <p class="pokemon-meta">
+              Especie: <strong>{{ p.species }}</strong> <br>
+              Tipo: <span class="type-badge {{ p.type }}">{{ p.type }}</span>
+            </p>
+          </div>
+
+          <div class="pokemon-data-section">
+            <h3>Habilidades</h3>
+            <ul class="clean-list">
+              <li *ngFor="let skill of (p.skills | keyvalue)">
+                {{ skill.key }}: {{ skill.value }}
+              </li>
+            </ul>
+          </div>
+
+          <div class="pokemon-data-section">
+            <h3>Ataques</h3>
+            <ul class="clean-list">
+              <li *ngFor="let attack of p.attacks">
+                {{ attack }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
